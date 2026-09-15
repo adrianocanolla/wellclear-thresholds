@@ -1,0 +1,62 @@
+[
+  {
+    "config": "En-route baseline (DO-365)",
+    "DMOD": 4000.0,
+    "ZTHR": 450.0,
+    "TAUMOD": 35.0,
+    "group": "__all__",
+    "TP": 636,
+    "FP": 1679,
+    "TN": 57685,
+    "FN": 0,
+    "TPR": 1.0,
+    "FPR": 0.02828313455966579,
+    "Precision": 0.27473002159827214,
+    "F1": 0.43104032531345304
+  },
+  {
+    "config": "Vincent et al. minimum (HMD=1000ft, tau=15s)",
+    "DMOD": 1000.0,
+    "ZTHR": 450.0,
+    "TAUMOD": 15.0,
+    "group": "__all__",
+    "TP": 636,
+    "FP": 546,
+    "TN": 58818,
+    "FN": 0,
+    "TPR": 1.0,
+    "FPR": 0.009197493430361836,
+    "Precision": 0.5380710659898477,
+    "F1": 0.6996699669966996
+  },
+  {
+    "config": "Vincent et al. maximum (HMD=2000ft, tau=25s)",
+    "DMOD": 2000.0,
+    "ZTHR": 450.0,
+    "TAUMOD": 25.0,
+    "group": "__all__",
+    "TP": 636,
+    "FP": 1046,
+    "TN": 58318,
+    "FN": 0,
+    "TPR": 1.0,
+    "FPR": 0.017620106461828718,
+    "Precision": 0.37812128418549346,
+    "F1": 0.548748921484038
+  },
+  {
+    "config": "Below-Vincent comparison (HMD=1000ft, tau=10s)",
+    "DMOD": 1000.0,
+    "ZTHR": 450.0,
+    "TAUMOD": 10.0,
+    "group": "__all__",
+    "TP": 636,
+    "FP": 346,
+    "TN": 59018,
+    "FN": 0,
+    "TPR": 1.0,
+    "FPR": 0.005828448217775083,
+    "Precision": 0.6476578411405295,
+    "F1": 0.7861557478368356
+  }
+]

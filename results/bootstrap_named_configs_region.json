@@ -1,0 +1,118 @@
+{
+  "pooled": [
+    {
+      "config": "En-route baseline (DO-365)",
+      "DMOD": 4000.0,
+      "ZTHR": 450.0,
+      "TAUMOD": 35.0,
+      "TPR_ci_low": 1.0,
+      "TPR_ci_high": 1.0,
+      "FPR_ci_low": 0.02699227974102056,
+      "FPR_ci_high": 0.029700806049020884,
+      "F1_ci_low": 0.40886631393760076,
+      "F1_ci_high": 0.45251778398510245,
+      "TN_ci_low": 57591.95,
+      "TN_ci_high": 57772.025
+    },
+    {
+      "config": "Vincent et al. minimum (HMD=1000ft, tau=15s)",
+      "DMOD": 1000.0,
+      "ZTHR": 450.0,
+      "TAUMOD": 15.0,
+      "TPR_ci_low": 1.0,
+      "TPR_ci_high": 1.0,
+      "FPR_ci_low": 0.008410964097637828,
+      "FPR_ci_high": 0.00995379322491134,
+      "F1_ci_low": 0.6741048123135566,
+      "F1_ci_high": 0.7247551285505588,
+      "TN_ci_low": 58754.0,
+      "TN_ci_high": 58881.0
+    },
+    {
+      "config": "Vincent et al. maximum (HMD=2000ft, tau=25s)",
+      "DMOD": 2000.0,
+      "ZTHR": 450.0,
+      "TAUMOD": 25.0,
+      "TPR_ci_low": 1.0,
+      "TPR_ci_high": 1.0,
+      "FPR_ci_low": 0.016564081990066877,
+      "FPR_ci_high": 0.018646767077421016,
+      "F1_ci_low": 0.5242519348664318,
+      "F1_ci_high": 0.5714315688507884,
+      "TN_ci_low": 58242.0,
+      "TN_ci_high": 58396.0
+    },
+    {
+      "config": "Below-Vincent comparison (HMD=1000ft, tau=10s)",
+      "DMOD": 1000.0,
+      "ZTHR": 450.0,
+      "TAUMOD": 10.0,
+      "TPR_ci_low": 1.0,
+      "TPR_ci_high": 1.0,
+      "FPR_ci_low": 0.0052207295222006156,
+      "FPR_ci_high": 0.006452204959814085,
+      "F1_ci_low": 0.76257707430589,
+      "F1_ci_high": 0.8087742482329775,
+      "TN_ci_low": 58961.975,
+      "TN_ci_high": 59076.0
+    }
+  ],
+  "stratified": [
+    {
+      "config": "En-route baseline (DO-365)",
+      "DMOD": 4000.0,
+      "ZTHR": 450.0,
+      "TAUMOD": 35.0,
+      "TPR_ci_low": 1.0,
+      "TPR_ci_high": 1.0,
+      "FPR_ci_low": 0.02701091988716661,
+      "FPR_ci_high": 0.029622488083687084,
+      "F1_ci_low": 0.4092709718944433,
+      "F1_ci_high": 0.45367890136841765,
+      "TN_ci_low": 57585.0,
+      "TN_ci_high": 57771.0
+    },
+    {
+      "config": "Vincent et al. minimum (HMD=1000ft, tau=15s)",
+      "DMOD": 1000.0,
+      "ZTHR": 450.0,
+      "TAUMOD": 15.0,
+      "TPR_ci_low": 1.0,
+      "TPR_ci_high": 1.0,
+      "FPR_ci_low": 0.008389922569504217,
+      "FPR_ci_high": 0.00995244805473498,
+      "F1_ci_low": 0.6762485604228536,
+      "F1_ci_high": 0.7261468700565946,
+      "TN_ci_low": 58748.975,
+      "TN_ci_high": 58880.0
+    },
+    {
+      "config": "Vincent et al. maximum (HMD=2000ft, tau=25s)",
+      "DMOD": 2000.0,
+      "ZTHR": 450.0,
+      "TAUMOD": 25.0,
+      "TPR_ci_low": 1.0,
+      "TPR_ci_high": 1.0,
+      "FPR_ci_low": 0.016567571528352875,
+      "FPR_ci_high": 0.018690639721374275,
+      "F1_ci_low": 0.5239796596310115,
+      "F1_ci_high": 0.5739751582451162,
+      "TN_ci_low": 58239.925,
+      "TN_ci_high": 58397.025
+    },
+    {
+      "config": "Below-Vincent comparison (HMD=1000ft, tau=10s)",
+      "DMOD": 1000.0,
+      "ZTHR": 450.0,
+      "TAUMOD": 10.0,
+      "TPR_ci_low": 1.0,
+      "TPR_ci_high": 1.0,
+      "FPR_ci_low": 0.00523701508955963,
+      "FPR_ci_high": 0.006430914191703634,
+      "F1_ci_low": 0.7636352529571834,
+      "F1_ci_high": 0.808762761697276,
+      "TN_ci_low": 58955.0,
+      "TN_ci_high": 59076.025
+    }
+  ]
+}

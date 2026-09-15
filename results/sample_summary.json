@@ -1,0 +1,8 @@
+{
+  "n_sample": 60000,
+  "severity": {
+    "Safe": 47267,
+    "Unsafe": 12097,
+    "Hazardous": 636
+  }
+}

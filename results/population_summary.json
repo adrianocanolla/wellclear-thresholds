@@ -1,0 +1,13 @@
+{
+  "n_population": 1000000,
+  "geometry": {
+    "head-on": 644309,
+    "overtaking": 202987,
+    "crossing": 152704
+  },
+  "severity": {
+    "Safe": 802981,
+    "Unsafe": 189784,
+    "Hazardous": 7235
+  }
+}

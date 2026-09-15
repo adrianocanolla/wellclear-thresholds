@@ -1,0 +1,62 @@
+[
+  {
+    "config": "En-route baseline (DO-365)",
+    "DMOD": 4000.0,
+    "ZTHR": 450.0,
+    "TAUMOD": 35.0,
+    "n_engaged": 34364,
+    "frac_engaged": 0.5727333333333333,
+    "acc_pooled": 0.8909,
+    "acc_engaged": 0.8095099522756373,
+    "over_alarm_engaged": 0.15623908741706438,
+    "under_alarm_engaged": 0.034250960307298337,
+    "bias_engaged_ft": -1298.8331839645657,
+    "mae_engaged_ft": 1311.8601906158005,
+    "frac_nopred_true_safe": 1.0
+  },
+  {
+    "config": "Vincent et al. minimum (HMD=1000ft, tau=15s)",
+    "DMOD": 1000.0,
+    "ZTHR": 450.0,
+    "TAUMOD": 15.0,
+    "n_engaged": 9723,
+    "frac_engaged": 0.16205,
+    "acc_pooled": 0.975,
+    "acc_engaged": 0.845726627584079,
+    "over_alarm_engaged": 0.14203435153759128,
+    "under_alarm_engaged": 0.012239020878329733,
+    "bias_engaged_ft": -321.18193235883246,
+    "mae_engaged_ft": 331.55655626777894,
+    "frac_nopred_true_safe": 1.0
+  },
+  {
+    "config": "Vincent et al. maximum (HMD=2000ft, tau=25s)",
+    "DMOD": 2000.0,
+    "ZTHR": 450.0,
+    "TAUMOD": 25.0,
+    "n_engaged": 20919,
+    "frac_engaged": 0.34865,
+    "acc_pooled": 0.93955,
+    "acc_engaged": 0.8266169510970888,
+    "over_alarm_engaged": 0.15679525789951718,
+    "under_alarm_engaged": 0.016587791003394043,
+    "bias_engaged_ft": -719.1821251476135,
+    "mae_engaged_ft": 738.8074883527731,
+    "frac_nopred_true_safe": 1.0
+  },
+  {
+    "config": "Below-Vincent comparison (HMD=1000ft, tau=10s)",
+    "DMOD": 1000.0,
+    "ZTHR": 450.0,
+    "TAUMOD": 10.0,
+    "n_engaged": 6802,
+    "frac_engaged": 0.11336666666666667,
+    "acc_pooled": 0.9844166666666667,
+    "acc_engaged": 0.8625404292855042,
+    "over_alarm_engaged": 0.12216995001470156,
+    "under_alarm_engaged": 0.015289620699794178,
+    "bias_engaged_ft": -211.99634432471674,
+    "mae_engaged_ft": 216.00742842566672,
+    "frac_nopred_true_safe": 1.0
+  }
+]

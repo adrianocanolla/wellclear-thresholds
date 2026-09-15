@@ -1,0 +1,38 @@
+{
+  "baseline": {
+    "n_alerted": 19290,
+    "n_total": 60000,
+    "alert_rate": 0.3215,
+    "lead_mean": 34.551010886469676,
+    "lead_p10": 10.0,
+    "lead_p50": 37.0,
+    "lead_p90": 59.0,
+    "lead_min": -64.0,
+    "lead_max": 117.0,
+    "frac_negative_lead": 0.05116640746500778
+  },
+  "vincent_max": {
+    "n_alerted": 9480,
+    "n_total": 60000,
+    "alert_rate": 0.158,
+    "lead_mean": 26.380274261603375,
+    "lead_p10": 9.0,
+    "lead_p50": 26.0,
+    "lead_p90": 47.0,
+    "lead_min": -64.0,
+    "lead_max": 117.0,
+    "frac_negative_lead": 0.042827004219409284
+  },
+  "vincent_min": {
+    "n_alerted": 4526,
+    "n_total": 60000,
+    "alert_rate": 0.07543333333333334,
+    "lead_mean": 17.087494476358817,
+    "lead_p10": 7.0,
+    "lead_p50": 16.0,
+    "lead_p90": 28.0,
+    "lead_min": -64.0,
+    "lead_max": 117.0,
+    "frac_negative_lead": 0.027839151568714096
+  }
+}

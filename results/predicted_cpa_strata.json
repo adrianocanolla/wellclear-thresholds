@@ -1,0 +1,65 @@
+[
+  {
+    "stratifier": "geometry",
+    "level": "head-on",
+    "accuracy": 0.92265,
+    "over_alarm": 0.0639,
+    "r_h_bias_ft": -850.4744835142217
+  },
+  {
+    "stratifier": "geometry",
+    "level": "overtaking",
+    "accuracy": 0.8464,
+    "over_alarm": 0.12005,
+    "r_h_bias_ft": -1670.3036287841992
+  },
+  {
+    "stratifier": "geometry",
+    "level": "crossing",
+    "accuracy": 0.90365,
+    "over_alarm": 0.0845,
+    "r_h_bias_ft": -1561.1252209046197
+  },
+  {
+    "stratifier": "closing speed",
+    "level": "high closure",
+    "accuracy": 0.8794,
+    "over_alarm": 0.1046,
+    "r_h_bias_ft": -1297.8342177281932
+  },
+  {
+    "stratifier": "closing speed",
+    "level": "low closure",
+    "accuracy": 0.9116,
+    "over_alarm": 0.06435,
+    "r_h_bias_ft": -1300.7588202047757
+  },
+  {
+    "stratifier": "closing speed",
+    "level": "medium closure",
+    "accuracy": 0.8817,
+    "over_alarm": 0.0995,
+    "r_h_bias_ft": -1299.1003912604722
+  },
+  {
+    "stratifier": "turn rate",
+    "level": "low turn",
+    "accuracy": 0.9157,
+    "over_alarm": 0.06835,
+    "r_h_bias_ft": -1215.935111466764
+  },
+  {
+    "stratifier": "turn rate",
+    "level": "medium turn",
+    "accuracy": 0.8899944997249862,
+    "over_alarm": 0.09095454772738637,
+    "r_h_bias_ft": -1345.6132138482137
+  },
+  {
+    "stratifier": "turn rate",
+    "level": "high turn",
+    "accuracy": 0.8670066496675166,
+    "over_alarm": 0.10914454277286136,
+    "r_h_bias_ft": -1322.457234742063
+  }
+]

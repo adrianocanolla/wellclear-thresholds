@@ -1,0 +1,18 @@
+[
+  {
+    "config": "En-route baseline (DO-365)",
+    "region_accuracy": 0.8663333333333333
+  },
+  {
+    "config": "Vincent et al. minimum (HMD=1000ft, tau=15s)",
+    "region_accuracy": 0.9727666666666667
+  },
+  {
+    "config": "Vincent et al. maximum (HMD=2000ft, tau=25s)",
+    "region_accuracy": 0.9343833333333333
+  },
+  {
+    "config": "Below-Vincent comparison (HMD=1000ft, tau=10s)",
+    "region_accuracy": 0.9839666666666667
+  }
+]

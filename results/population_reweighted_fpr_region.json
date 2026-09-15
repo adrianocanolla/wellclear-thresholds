@@ -1,0 +1,46 @@
+[
+  {
+    "config": "En-route baseline (DO-365)",
+    "DMOD": 4000.0,
+    "ZTHR": 450.0,
+    "TAUMOD": 35.0,
+    "fpr_sample_raw": 0.02828313455966579,
+    "fpr_population_reweighted": 0.020654673366911066,
+    "fpr_head-on": 0.010631362519432325,
+    "fpr_overtaking": 0.04815835118865422,
+    "fpr_crossing": 0.026386156097068767
+  },
+  {
+    "config": "Vincent et al. minimum (HMD=1000ft, tau=15s)",
+    "DMOD": 1000.0,
+    "ZTHR": 450.0,
+    "TAUMOD": 15.0,
+    "fpr_sample_raw": 0.009197493430361836,
+    "fpr_population_reweighted": 0.0065017771789212895,
+    "fpr_head-on": 0.002808284439095331,
+    "fpr_overtaking": 0.0176512600755025,
+    "fpr_crossing": 0.007265021946420463
+  },
+  {
+    "config": "Vincent et al. maximum (HMD=2000ft, tau=25s)",
+    "DMOD": 2000.0,
+    "ZTHR": 450.0,
+    "TAUMOD": 25.0,
+    "fpr_sample_raw": 0.017620106461828718,
+    "fpr_population_reweighted": 0.012581304937097052,
+    "fpr_head-on": 0.005867308560252746,
+    "fpr_overtaking": 0.03162942556881951,
+    "fpr_crossing": 0.015589526260027244
+  },
+  {
+    "config": "Below-Vincent comparison (HMD=1000ft, tau=10s)",
+    "DMOD": 1000.0,
+    "ZTHR": 450.0,
+    "TAUMOD": 10.0,
+    "fpr_sample_raw": 0.005828448217775083,
+    "fpr_population_reweighted": 0.004148755871106241,
+    "fpr_head-on": 0.0018554736472594152,
+    "fpr_overtaking": 0.011019283746556474,
+    "fpr_crossing": 0.004691993340396549
+  }
+]
