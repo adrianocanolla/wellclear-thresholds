@@ -102,9 +102,7 @@ Everything below is fixed in code; changing any of it changes the results.
 The extended-state CSVs carry one header line and a **trailing comma on every
 row**, so each row parses into 16 fields rather than 15. Supplying only 15
 column names makes pandas absorb the first field as the index and shift every
-remaining name one position left — which silently turns along-runway position
-into cross-runway position, altitude into a velocity, and time into speed. The
-loader here passes a trailing throwaway name and `skiprows=1` to keep each
+remaining name one position left. The loader here passes a trailing throwaway name and `skiprows=1` to keep each
 column aligned with its contents. See `lltem_preprocessing.load_encounter_pair`.
 
 ## Two scoring scales
