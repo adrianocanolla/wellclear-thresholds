@@ -224,7 +224,7 @@ def preprocess_encounters(zf, selected, progress_every=2000):
             aligned['geometry'] = row['geometry']
             aligned_list.append(aligned)
             turn_rate_max.append(turn)
-        except Exception as exc:                      # noqa: BLE001 - reported, not raised
+        except Exception as exc:                      
             failed.append((enc_id, str(exc)))
 
     print(f'  done in {(time.time() - t0) / 60:.1f} min: '
