@@ -1,0 +1,5 @@
+config,DMOD,ZTHR,TAUMOD,n_alerts_nmac,tp_nmac,fp_total,fp_genuine_wcv,fp_truly_safe,frac_fp_genuine_wcv,safe_alert_rate,wcv_detection_own_volume
+En-route baseline (DO-365),4000.0,450.0,35.0,2315,636,1679,1463,216,0.8713519952352591,0.0036,1.0
+"Vincent et al. minimum (HMD=1000ft, tau=15s)",1000.0,450.0,15.0,1182,636,546,447,99,0.8186813186813187,0.00165,1.0
+"Vincent et al. maximum (HMD=2000ft, tau=25s)",2000.0,450.0,25.0,1682,636,1046,882,164,0.8432122370936902,0.0027333333333333333,1.0
+"Below-Vincent comparison (HMD=1000ft, tau=10s)",1000.0,450.0,10.0,982,636,346,324,22,0.9364161849710982,0.00036666666666666667,1.0

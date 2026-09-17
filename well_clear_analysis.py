@@ -855,42 +855,54 @@ def peak_closing_speed(stacked):
     return out
 
 
-def wcv_vs_nmac(stacked, severity_labels, configs=None):
-    """The same criterion scored against two different positive classes.
+def false_positive_composition(stacked, configs=None):
+    """What each configuration's NMAC-severity false positives actually were.
 
-    NMAC takes the fixed 500 ft / 100 ft boundary as the positive class; WCV
-    takes a true Well Clear violation of the en-route volume. Also returns how
-    the NMAC-severity false positives split between encounters that genuinely
-    violated Well Clear and encounters that were truly Safe -- the two are
-    very different things operationally, and the pooled false-positive rate
-    does not distinguish them.
+    An alert that fails the NMAC test has not necessarily failed at its job:
+    it may have flagged a genuine Well Clear violation. This decomposes the
+    false positives by the encounter's true severity, judged against **that
+    configuration's own** Well Clear volume -- the volume it is actually
+    alerting to, not a fixed external one.
+
+    Well Clear violation is deliberately not reported as a positive class.
+    Every configuration flags every violation of its own volume, for the same
+    reason the NMAC true-positive rate is 1.000: if the true CPA lies inside
+    the volume then at the closest-approach timestep r_h < DMOD and
+    r_v < ZTHR, so both gates are satisfied. `wcv_detection_own_volume` is
+    returned anyway, so that degeneracy is visible in the output and can be
+    asserted rather than taken on trust.
     """
     configs = configs or NAMED_CONFIGS
-    severity_labels = np.asarray(severity_labels, dtype=object)
-    n = len(severity_labels)
+    n = len(stacked['r_h_min'])
     rows = []
     for name, (dmod, zthr, taumod) in configs.items():
         region = evaluate_lowc_region(stacked, dmod=dmod, zthr=zthr,
                                       taumod=taumod)['predicted_region']
-        nmac = region_confusion_counts(severity_labels, region,
-                                       positive_tiers=('Hazardous',),
-                                       positive_labels=('Hazardous',))
-        wcv = region_confusion_counts(severity_labels, region,
-                                      positive_tiers=('Hazardous', 'Unsafe'),
-                                      positive_labels=('Hazardous', 'Unsafe'))
+        true_region = label_from_cpa(stacked['r_h_min'], stacked['r_v_at_cpa'],
+                                     dmod, zthr)
+
         predicted_nmac = region == 'Hazardous'
-        fp_wcv = int(np.sum(predicted_nmac & (severity_labels == 'Unsafe')))
-        fp_safe = int(np.sum(predicted_nmac & (severity_labels == 'Safe')))
+        tp = int(np.sum(predicted_nmac & (true_region == 'Hazardous')))
+        fp_wcv = int(np.sum(predicted_nmac & (true_region == 'Unsafe')))
+        fp_safe = int(np.sum(predicted_nmac & (true_region == 'Safe')))
+        fp_total = fp_wcv + fp_safe
+
+        positive = ('Hazardous', 'Unsafe')
+        true_wcv = np.isin(true_region, positive)
+        predicted_wcv = np.isin(region, positive)
+
         rows.append({
             'config': name, 'DMOD': dmod, 'ZTHR': zthr, 'TAUMOD': taumod,
-            'NMAC_FPR': nmac['FPR'], 'NMAC_Precision': nmac['Precision'],
-            'WCV_TPR': wcv['TPR'], 'WCV_FPR': wcv['FPR'],
-            'WCV_Precision': wcv['Precision'],
-            'fp_total': fp_wcv + fp_safe,
+            'n_alerts_nmac': tp + fp_total,
+            'tp_nmac': tp,
+            'fp_total': fp_total,
             'fp_genuine_wcv': fp_wcv,
             'fp_truly_safe': fp_safe,
-            'frac_fp_genuine_wcv': fp_wcv / max(fp_wcv + fp_safe, 1),
+            'frac_fp_genuine_wcv': fp_wcv / fp_total if fp_total else float('nan'),
             'safe_alert_rate': fp_safe / n if n else float('nan'),
+            'wcv_detection_own_volume':
+                float(np.sum(true_wcv & predicted_wcv) / np.sum(true_wcv))
+                if true_wcv.any() else float('nan'),
         })
     return pd.DataFrame(rows)
 

@@ -21,10 +21,9 @@ The encounter dataset is **not included** — the trajectory archive alone is
 18 GB. Download it separately:
 
 **MIT Lincoln Laboratory Terminal Encounter Model (LLTEM) V1.0**, 30 June 2020,
-licensed **CC BY 4.0**.
+licensed **CC BY 4.0**, available from MIT Lincoln Laboratory:
 
-> <!-- TODO: paste the download URL you used. The dataset's own README ships no
-> URL, so this is deliberately left blank rather than guessed. -->
+<https://www.ll.mit.edu/r-d/datasets/unmanned-aircraft-terminal-area-encounters>
 
 | File | Size | Needed? |
 |---|---|---|
@@ -71,13 +70,13 @@ read without downloading the dataset or running anything.
 | Table 1 — baseline vs. Vincent et al. | `named_region_metrics.json` |
 | Table 2 — by encounter geometry | `named_region_metrics_by_geometry.json` |
 | Table 3 — population-reweighted | `population_reweighted_fpr_region.json` |
-| Table 4 — WCV vs. NMAC | `wcv_vs_nmac.json` |
-| Table 5 — smoothing sensitivity | `smoothing_sensitivity.json` |
-| Table 6 — predicted-CPA accuracy | `predicted_cpa_accuracy.json`, `predicted_cpa_engaged_only.json` |
-| Table 7 — predicted-CPA by stratum | `predicted_cpa_strata.json` |
+| §5.3 false-positive composition | `false_positive_composition.json` |
+| Table 4 — smoothing sensitivity | `smoothing_sensitivity.json` |
+| Table 5 — predicted-CPA accuracy | `predicted_cpa_accuracy.json`, `predicted_cpa_engaged_only.json` |
+| Table 6 — predicted-CPA by stratum | `predicted_cpa_strata.json` |
 | §5.3 bootstrap intervals | `bootstrap_named_configs_region.json` |
-| §5.8 region accuracy | `region_accuracy.json` |
-| §5.9 alert rates and lead times | `operational_feasibility.json` |
+| §5.7 region accuracy | `region_accuracy.json` |
+| §5.8 alert rates and lead times | `operational_feasibility.json` |
 | Figure 1 | `figures/methodology_workflow.pdf` |
 | Figure 2 | `figures/threshold_tradeoff_heatmap.pdf`, `fpr_vs_taumod.json` |
 | Figure 3 | `figures/confusion_matrix.pdf` |
@@ -118,7 +117,10 @@ The code keeps these deliberately separate, and so should anyone extending it:
   NMAC-severity false-alarm rate responds only to TAUMOD; section 12 of the
   notebook verifies that directly rather than assuming it.
 - **Well Clear** — the configuration's own DMOD / ZTHR volume. Used for region
-  classification and for the complementary WCV-positive evaluation in Table 4.
+  classification, and for deciding what each false positive really was.
+  Detection of violations of a configuration's *own* volume is 1.000 by
+  construction, for the same reason, so it is computed and asserted but never
+  reported as a result.
 
 ## License
 
