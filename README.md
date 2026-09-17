@@ -34,9 +34,7 @@ licensed **CC BY 4.0**, available from MIT Lincoln Laboratory:
 Put both required files in `data/`. The archive is read member by member and is
 never extracted.
 
-For the model itself see Cheng et al. (2024),
-<https://doi.org/10.1109/iaeac59436.2024.10503742>. Dataset questions go to
-MIT Lincoln Laboratory (contact details are in the dataset's own `README.txt`).
+Dataset questions go to MIT Lincoln Laboratory (contact details are in the dataset's own `README.txt`).
 
 ## Running it
 
