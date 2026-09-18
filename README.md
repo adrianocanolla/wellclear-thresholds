@@ -103,20 +103,6 @@ column names makes pandas absorb the first field as the index and shift every
 remaining name one position left. The loader here passes a trailing throwaway name and `skiprows=1` to keep each
 column aligned with its contents. See `lltem_preprocessing.load_encounter_pair`.
 
-## Two scoring scales
-
-The code keeps these deliberately separate, and so should anyone extending it:
-
-- **NMAC severity** — 500 ft / 100 ft, fixed, independent of the configuration
-  under test. The positive class for the headline detection metrics. Because a
-  configuration's own DMOD and ZTHR never enter this scoring, the
-  NMAC-severity false-alarm rate responds only to TAUMOD; section 12 of the
-  notebook verifies that directly rather than assuming it.
-- **Well Clear** — the configuration's own DMOD / ZTHR volume. Used for region
-  classification, and for deciding what each false positive really was.
-  Detection of violations of a configuration's *own* volume is 1.000 by
-  construction, for the same reason, so it is computed and asserted but never
-  reported as a result.
 
 ## License
 
