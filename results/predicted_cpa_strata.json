@@ -2,64 +2,64 @@
   {
     "stratifier": "geometry",
     "level": "head-on",
-    "accuracy": 0.92265,
-    "over_alarm": 0.0639,
-    "r_h_bias_ft": -850.4744835142217
+    "accuracy": 0.9226,
+    "over_alarm": 0.06375,
+    "r_h_bias_ft": -851.0170770613793
   },
   {
     "stratifier": "geometry",
     "level": "overtaking",
-    "accuracy": 0.8464,
-    "over_alarm": 0.12005,
-    "r_h_bias_ft": -1670.3036287841992
+    "accuracy": 0.8432,
+    "over_alarm": 0.1166,
+    "r_h_bias_ft": -1686.7630310948325
   },
   {
     "stratifier": "geometry",
     "level": "crossing",
-    "accuracy": 0.90365,
-    "over_alarm": 0.0845,
-    "r_h_bias_ft": -1561.1252209046197
+    "accuracy": 0.90295,
+    "over_alarm": 0.0841,
+    "r_h_bias_ft": -1564.8123478650998
   },
   {
     "stratifier": "closing speed",
     "level": "high closure",
-    "accuracy": 0.8794,
-    "over_alarm": 0.1046,
-    "r_h_bias_ft": -1297.8342177281932
+    "accuracy": 0.87895,
+    "over_alarm": 0.10425,
+    "r_h_bias_ft": -1299.3321743096183
   },
   {
     "stratifier": "closing speed",
     "level": "low closure",
-    "accuracy": 0.9116,
-    "over_alarm": 0.06435,
-    "r_h_bias_ft": -1300.7588202047757
+    "accuracy": 0.90855,
+    "over_alarm": 0.0619,
+    "r_h_bias_ft": -1319.96271550681
   },
   {
     "stratifier": "closing speed",
     "level": "medium closure",
-    "accuracy": 0.8817,
-    "over_alarm": 0.0995,
-    "r_h_bias_ft": -1299.1003912604722
+    "accuracy": 0.88125,
+    "over_alarm": 0.0983,
+    "r_h_bias_ft": -1303.485404609004
   },
   {
     "stratifier": "turn rate",
     "level": "low turn",
-    "accuracy": 0.9157,
-    "over_alarm": 0.06835,
-    "r_h_bias_ft": -1215.935111466764
+    "accuracy": 0.91475,
+    "over_alarm": 0.06705,
+    "r_h_bias_ft": -1222.3167803349581
   },
   {
     "stratifier": "turn rate",
     "level": "medium turn",
-    "accuracy": 0.8899944997249862,
-    "over_alarm": 0.09095454772738637,
-    "r_h_bias_ft": -1345.6132138482137
+    "accuracy": 0.8884944247212361,
+    "over_alarm": 0.08995449772488624,
+    "r_h_bias_ft": -1350.8322344011317
   },
   {
     "stratifier": "turn rate",
     "level": "high turn",
-    "accuracy": 0.8670066496675166,
-    "over_alarm": 0.10914454277286136,
-    "r_h_bias_ft": -1322.457234742063
+    "accuracy": 0.8655067246637668,
+    "over_alarm": 0.10744462776861156,
+    "r_h_bias_ft": -1328.5052858611814
   }
 ]

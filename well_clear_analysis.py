@@ -233,9 +233,14 @@ def timeseries_cpa_metrics(aligned):
     r_v = np.abs(rz)
     d_range_h = aligned['d_range_h']
 
-    v_sq = vx ** 2 + vy ** 2 + vz ** 2
+    # DO-365 defines the horizontal miss distance at the time that minimises
+    # the range *in the horizontal plane*, so TCPA is taken on the horizontal
+    # components alone. ZCPA is then the vertical separation at that same
+    # instant.
+    vh_sq = vx ** 2 + vy ** 2
+    v_sq = vh_sq + vz ** 2
     with np.errstate(divide='ignore', invalid='ignore'):
-        tcpa = np.where(v_sq > 1e-6, -(rx * vx + ry * vy + rz * vz) / v_sq, 0.0)
+        tcpa = np.where(vh_sq > 1e-6, -(rx * vx + ry * vy) / vh_sq, 0.0)
         hmd = np.sqrt((rx + vx * tcpa) ** 2 + (ry + vy * tcpa) ** 2)
         zcpa = np.abs(rz + vz * tcpa)
 
