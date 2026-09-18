@@ -10,8 +10,11 @@ Vincent et al. (2018). Ground truth is the standard NMAC definition
 (500 ft / 100 ft), computed from each encounter's true closest point of
 approach.
 
-> **Citation:** <!-- TODO: fill in once the DOI is assigned --> Canolla, A.
-> *Drones*, forthcoming.
+> **Citation:** Canolla, A. *Data-Driven Validation of DO-365
+> Detect-and-Avoid Well Clear Thresholds for UAS in Terminal Airspace
+> Using One Million Encounters.* Drones (MDPI), forthcoming.
+> Code archive: <https://doi.org/10.5281/zenodo.22833687>
+
 
 ---
 
