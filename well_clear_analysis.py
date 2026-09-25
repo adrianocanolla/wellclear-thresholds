@@ -77,6 +77,14 @@ NAMED_CONFIGS = {
     "Below-Vincent comparison (HMD=1000ft, tau=10s)": (1000.0, 450.0, 10.0),
 }
 
+# RTCA DO-365B's terminal DAA Well Clear volume, adopted by SC-228 for Phase 2
+# approach and departure operations: distance-only, with no time-based branch.
+# Kept out of NAMED_CONFIGS deliberately -- it is reported as one reference
+# point alongside the four configurations under test, not folded into the
+# per-geometry, reweighted, sensitivity and bootstrap analyses, which are scoped
+# to the en-route default and Vincent et al.'s range.
+DO365B_TERMINAL = (1500.0, 450.0, 0.0)
+
 
 def _label_tiers(r_h, r_v, tiers):
     """Nested-tier labeling shared by label_severity and label_from_cpa.
@@ -312,8 +320,15 @@ def evaluate_lowc_batch(stacked, dmod=DEFAULT_DMOD, zthr=DEFAULT_ZTHR, taumod=DE
     """Vectorized Loss-of-Well-Clear evaluation over every encounter in a
     stack_metrics() result, for one threshold configuration:
 
-        LoWC(t) = (r_h(t) < DMOD  OR  (tau_mod(t) < TAUMOD AND HMD(t) < HMD_threshold))
+        LoWC(t) = (r_h(t) < DMOD  OR  (0 <= tau_mod(t) < TAUMOD
+                                       AND HMD(t) < HMD_threshold))
                   AND (r_v(t) < ZTHR)
+
+    The lower bound is DAIDALUS's and is stated for conformance, not for
+    effect: tau_mod(t) < 0 requires DMOD^2 - ||s(t)||^2 > 0, i.e. r_h(t) < DMOD,
+    which already satisfies the first branch of the disjunction. The guard
+    therefore cannot change any decision, and the assertion below checks that
+    on the data rather than leaving it as an argument.
 
     This corrects an operator-precedence ambiguity in the paper draft's
     As literally typeset in the paper (AND binds tighter than OR),
@@ -333,7 +348,12 @@ def evaluate_lowc_batch(stacked, dmod=DEFAULT_DMOD, zthr=DEFAULT_ZTHR, taumod=DE
         hmd_threshold = dmod
 
     tau_mod = compute_tau_mod(stacked['r_h'], stacked['d_range_h'], dmod)
-    horizontal = (stacked['r_h'] < dmod) | ((tau_mod < taumod) & (stacked['HMD'] < hmd_threshold))
+    inside = stacked['r_h'] < dmod
+    predictive = (tau_mod >= 0) & (tau_mod < taumod) & (stacked['HMD'] < hmd_threshold)
+    assert not np.any((tau_mod < 0) & ~inside), (
+        "tau_mod < 0 outside DMOD: the lower bound in eq. `eq:lowc` would then "
+        "change a decision, contradicting the docstring's conformance argument")
+    horizontal = inside | predictive
     lowc = horizontal & (stacked['r_v'] < zthr)
 
     any_lowc = lowc.any(axis=1)

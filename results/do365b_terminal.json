@@ -1,0 +1,21 @@
+{
+  "config": "DO-365B terminal DWC (HMD=1500ft, no tau)",
+  "DMOD": 1500.0,
+  "ZTHR": 450.0,
+  "TAUMOD": 0.0,
+  "TP": 636,
+  "FP": 94,
+  "TN": 59270,
+  "FN": 0,
+  "FPR": 0.0015834512499157739,
+  "Precision": 0.8712328767123287,
+  "fp_total": 94.0,
+  "fp_genuine_wcv": 92.0,
+  "fp_truly_safe": 2.0,
+  "frac_fp_genuine_wcv": 0.9787234042553191,
+  "safe_alert_rate": 3.3333333333333335e-05,
+  "n_alerted": 5193,
+  "alert_rate": 0.08655,
+  "lead_p50": 7.0,
+  "lead_mean": 10.346813017523589
+}
