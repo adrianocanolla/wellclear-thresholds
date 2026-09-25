@@ -13,7 +13,7 @@ approach.
 > **Citation:** Canolla, A. *Data-Driven Validation of DO-365
 > Detect-and-Avoid Well Clear Thresholds for UAS in Terminal Airspace
 > Using One Million Encounters.* Drones (MDPI), forthcoming.
-> Code archive: <https://doi.org/10.5281/zenodo.22833687>
+> Code archive: [![DOI](https://zenodo.org/badge/1370680378.svg)](https://doi.org/10.5281/zenodo.22833837)
 
 
 ---
